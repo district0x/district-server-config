@@ -1,6 +1,7 @@
 (ns district.server.config
   (:require
-    [cljs-node-io.core :as io :refer [slurp spit]]
+    [cljs-node-io.core :refer [slurp]]
+    [cljs-node-io.fs :refer [file?]]
     [clojure.walk :as walk]
     [cognitect.transit :as transit]
     [mount.core :as mount :refer [defstate]]))
@@ -26,7 +27,12 @@
    (load {}))
   ([{:keys [:default :env-name :file-path]
      :or {env-name "CONFIG"}}]
-   (let [env-config (when-let [path (or file-path (aget env env-name))]
+   (let [path (or file-path (aget env env-name))
+         path (if (and (empty? path)
+                       (file? "config.json"))
+                "config.json"
+                path)
+         env-config (when path
                       (-> (transit/read reader (slurp path))
                         walk/keywordize-keys))]
      (merge-in default env-config))))
