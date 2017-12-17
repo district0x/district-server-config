@@ -8,6 +8,10 @@ Include `[district.server.config]` in your CLJS file, where you use `mount/start
 
 **Warning:** district0x components are still in early stages, therefore API can change in a future.
 
+## Real-world example
+To see how district server components play together in real-world app, you can take a look at [NameBazaar server folder](https://github.com/district0x/name-bazaar/tree/master/src/name_bazaar/server), 
+where this is deployed in production.
+
 ## Usage
 You can pass following args to config component:   
 * `:default` Default configuration that will be deep-merged with the one read from a file  
