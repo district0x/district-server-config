@@ -4,7 +4,7 @@ Clojurescript-node.js [mount](https://github.com/tolitius/mount) component for a
 
 ## Installation
 Add `[district0x/district-server-config "1.0.0"]` into your project.clj  
-Include `[district.server.config.core]` in your CLJS file, where you use `mount/start`.
+Include `[district.server.config]` in your CLJS file, where you use `mount/start`.
 
 **Warning:** district components are still in early stages, therefore API can change in a future.
 
