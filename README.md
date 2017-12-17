@@ -10,8 +10,8 @@ Include `[district.server.config]` in your CLJS file, where you use `mount/start
 
 ## Usage
 You can pass following args to config component:   
-* `:default` Default configuration that will be deep-merged with the one read from file  
-* `:env-name` Name of ENV variable that stored path to config file  
+* `:default` Default configuration that will be deep-merged with the one read from a file  
+* `:env-name` Name of ENV variable that stores path to config file  
 * `:file-path` Path to a config file  
 
 Config file is expected to be in JSON format.
