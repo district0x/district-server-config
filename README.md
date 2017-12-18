@@ -1,5 +1,7 @@
 # district-server-config
 
+[![Build Status](https://travis-ci.org/district0x/district-server-config.svg?branch=master)](https://travis-ci.org/district0x/district-server-config)
+
 Clojurescript-node.js [mount](https://github.com/tolitius/mount) component for a district server, that takes care of loading configuration from a file at system start. 
 
 ## Installation
