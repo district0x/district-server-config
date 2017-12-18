@@ -14,12 +14,11 @@
                                   [com.cemerick/piggieback "0.2.2"]
                                   [figwheel-sidecar "0.5.14"]
                                   [org.clojure/tools.nrepl "0.2.13"]]
+                   :plugins [[lein-cljsbuild "1.1.7"]
+                             [lein-figwheel "0.5.14"]
+                             [lein-npm "0.6.2"]
+                             [lein-doo "0.1.7"]]
                    :source-paths ["dev"]}}
-
-  :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-figwheel "0.5.14"]
-            [lein-npm "0.6.2"]
-            [lein-doo "0.1.7"]]
 
   :npm {:devDependencies [[ws "2.0.1"]]}
 
