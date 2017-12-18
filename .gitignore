@@ -11,3 +11,6 @@ pom.xml.asc
 .hg/
 /.idea/
 /district-server-config.iml
+/figwheel_server.log
+/tests-compiled/
+/node_modules/
