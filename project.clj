@@ -4,9 +4,10 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[cljs-node-io "0.5.0"]
-                 [com.cognitect/transit-cljs "0.8.243"]
                  [mount "0.1.11"]
                  [org.clojure/clojurescript "1.9.946"]]
+
+  :npm {:devDependencies [[ws "2.0.1"]]}
 
   :figwheel {:server-port 4672}
 
@@ -19,8 +20,6 @@
                              [lein-npm "0.6.2"]
                              [lein-doo "0.1.7"]]
                    :source-paths ["dev"]}}
-
-  :npm {:devDependencies [[ws "2.0.1"]]}
 
   :cljsbuild {:builds [{:id "tests"
                         :source-paths ["src" "test"]
