@@ -3,8 +3,11 @@
   :url "https://github.com/district0x/district-server-config"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[cljs-node-io "0.5.0"]
+  :dependencies [
+                 ; [cljs-node-io "0.5.0"]
+                 [com.github.pkpkpk/cljs-node-io "2.0.332"]
                  [mount "0.1.11"]
+                 [javax.xml.bind/jaxb-api "2.3.0"]
                  [org.clojure/clojurescript "1.9.946"]]
 
   :npm {:devDependencies [[ws "2.0.1"]]}
