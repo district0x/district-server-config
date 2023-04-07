@@ -1,22 +1,22 @@
 # district-server-config
 
-[![Build Status](https://travis-ci.org/district0x/district-server-config.svg?branch=master)](https://travis-ci.org/district0x/district-server-config)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/district0x/district-server-config/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/district0x/district-server-config/tree/master)
 
-Clojurescript-node.js [mount](https://github.com/tolitius/mount) module for a district server, that takes care of loading configuration from a file at system start. 
+Clojurescript-node.js [mount](https://github.com/tolitius/mount) module for a district server, that takes care of loading configuration from a file at system start.
 
 ## Installation
-Add `[district0x/district-server-config "1.0.1"]` into your project.clj  
+Add `[district0x/district-server-config "1.5.0-SNAPSHOT"]` into your project.clj
 Include `[district.server.config]` in your CLJS file, where you use `mount/start`.
 
 **Warning:** district0x modules are still in early stages, therefore API can change in a future.
 
 ## Real-world example
-To see how district server modules play together in real-world app, you can take a look at [NameBazaar server folder](https://github.com/district0x/name-bazaar/tree/master/src/name_bazaar/server), 
+To see how district server modules play together in real-world app, you can take a look at [NameBazaar server folder](https://github.com/district0x/name-bazaar/tree/master/src/name_bazaar/server),
 where this is deployed in production.
 
 ## Usage
-You can pass following args to config module:   
-* `:default` Default configuration that will be deep-merged with the one read from a file  
+You can pass following args to config module:
+* `:default` Default configuration that will be deep-merged with the one read from a file
 * `:env-name` Name of ENV variable that stores path to config file. Default: `CONFIG`
 * `:file-path` Path to a config file. Default: `config.edn`, but won't throw error if doesn't exist
 
@@ -36,16 +36,14 @@ Config file is expected to be in [EDN](https://github.com/edn-format/edn) format
 (println @config)
 ;; => {:something 1 :some-other-thing 2}
 ```
-## Development
-```bash
-# To start REPL and run tests
-lein deps
-lein repl
-(start-tests!)
 
-# In other terminal
-node tests-compiled/run-tests.js
+## Development, test & release
 
-# To run tests without REPL
-lein doo node "tests" once
-```
+1. Build: `npx shadow-cljs compile test-node`
+  - also need to deploy contracts: `npx truffle migrate --network ganache --reset`
+2. Tests: `node out/node-tests.js`
+
+To release (happens automatically on CI at merge to master)
+
+1. Build: `clj -T:build jar`
+2. Release: `clj -T:build deploy`
